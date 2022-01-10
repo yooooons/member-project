@@ -3,18 +3,23 @@ package member.memberproject.service;
 import member.memberproject.domain.Member;
 import member.memberproject.repository.MemberRepository;
 import member.memberproject.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-//cnt shift t 테스트 단축키
+//cnt shift t 테스트 단축키)테스트 자동
+//@Service
 public class MemberService {
     //private final MemberRepository memberRepository = new MemoryMemberRepository();
 
     private final MemberRepository memberRepository;
+    //@Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
-    //MemberRepository를 외부에서 넣어준다 DI
+    //MemberRepository를 외부에서 넣어준다 DI(dependency injection 의존성 주입)
+    //단축키 alt insert -> construct
 
 
     /* 회원가입 */

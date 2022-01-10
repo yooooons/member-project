@@ -1,10 +1,12 @@
 package member.memberproject.repository;
 
 import member.memberproject.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
 //MemberRepository 인터페이스 구현체
+//@Repository
 public class MemoryMemberRepository implements MemberRepository{//alt+enter 메서드 오버라이드 자동추가 단축키
 
     private static Map<Long, Member> store = new HashMap<>();
