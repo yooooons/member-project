@@ -1,30 +1,26 @@
 package member.memberproject.service;
 
 import member.memberproject.domain.Member;
+import member.memberproject.repository.MemberRepository;
 import member.memberproject.repository.MemoryMemberRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
-//단위테스트
-class MemberServiceTest {
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+//통합테스트
+//통합테스트보다는 단위테스트로 개발하기
+@SpringBootTest
+@Transactional
+class MemberServiceIntegrationTest {
     //테스트 코드는 직관적으로 확인하기 쉽게 한글로 적기도 한다.
-    MemberService memberService ;
-    MemoryMemberRepository memberRepository ;
-
-    @BeforeEach
-    public void beforEach(){
-        memberRepository = new MemoryMemberRepository();
-        memberService = new MemberService(memberRepository);
-    }
-
-    @AfterEach
-    public void afterEach() {
-
-        memberRepository.clearStore();
-    }
+    @Autowired MemberService memberService ;
+    @Autowired MemberRepository memberRepository ;
 
     @Test
     void 회원가입() {
@@ -69,12 +65,5 @@ class MemberServiceTest {
 
         //then
     }
-    @Test
-    void findMembers() {
 
-    }
-
-    @Test
-    void findOne() {
-    }
 }
