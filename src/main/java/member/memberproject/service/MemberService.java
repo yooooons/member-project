@@ -5,11 +5,13 @@ import member.memberproject.repository.MemberRepository;
 import member.memberproject.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 //cnt shift t 테스트 단축키)테스트 자동
 //@Service
+@Transactional //JPA를 사용할때 필요,데이터를 저장하거나 변경할때 transactional이 있어야한다
 public class MemberService {
     //private final MemberRepository memberRepository = new MemoryMemberRepository();
 
