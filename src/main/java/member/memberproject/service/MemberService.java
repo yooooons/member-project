@@ -42,13 +42,14 @@ public class MemberService {
                     throw new IllegalStateException("이미 존재하는 회원입니다.");
                 });
         */
-        //cnt alt shift t ---extractmethod 함수를 뽑아낸다
 
-        validateDuplicateMember(member);
-        //3)중복회원 검증
+            //cnt alt shift t ---extractmethod 함수를 뽑아낸다
+            validateDuplicateMember(member);
+            //3)중복회원 검증
 
-        memberRepository.save(member);
-        return member.getId();
+            memberRepository.save(member);
+            return member.getId();
+
     }
 
     private void validateDuplicateMember(Member member) {
